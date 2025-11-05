@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Code Generator</title>
+</head>
+<body>
+    {% block content %}
+    <h2>QR Code Generator</h2>
+
+    <form action="/qecode" method="post">
+        {% csrf_token %}
+        Enter the data: <input type="text" name="data"><br><br>
+        Enter the filename: <input type="text" name="file"><br><br>
+        <input type="submit" value="Generate QR">
+    </form>
+
+    {% if image %}
+        <h3>Generated QR Code:</h3>
+        <img src="/{{ image }}" alt="QR Code" width="200">
+    {% endif %}
+    
+    {% endblock %}
+</body>
+</html>

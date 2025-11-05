@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DJANGO  </title>
+</head>
+
+<body >
+    {% extends 'base.html' %}
+    {% block content %}
+    <h1><center>WELCOME TO Django {{name}}</center></h1>
+    <form action="/add" method="post">
+        {% csrf_token %}
+        <a href="https://youtu.be/1a5nyrMtRsk?si=kVt8ztEVs0EOzO_e"><button class="temp">click me</button></a>
+        enter number 1 <input type="text" name="num_1"><br>
+        enter number 2 <input type="text" name="num_2"><br>
+        <button type="submit">Submit Form</button>
+<button type="reset">Clear</button>
+<button type="button" onclick="myFunction()">Click Me</button>
+    </form>
+{% endblock %}
+    </body>
+    
+   
+</body>
+</html>

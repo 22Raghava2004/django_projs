@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %} <!-- this is a django condition that helps to check the user is authenticated or not-->
+ Welcome,{{user.username}}
+ <form action="{% url 'logout' %}" method="post" style="display: inline;">
+    {% csrf_token %}
+    <button type="submit">logout</button>
+ </form>
+
+ {% else %}
+   <p>please loggin in</p> 
+   <a href=" {% url 'login' %}">login</a> 
+{% endif %}
+{% endblock %}
