@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head><title>Home</title></head>
+<body>
+  <h1>🎬 All Movies</h1>
+
+  {% for i in movie_ids %}
+    <a href="{% url 'movie_detail' i %}">Go to Movie {{ i }}</a><br>
+  {% endfor %}
+</body>
+</html>
