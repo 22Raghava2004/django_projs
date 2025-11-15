@@ -27,5 +27,5 @@ urlpatterns = [
     
 ]
 router=routers.SimpleRouter()
-router.register('posts',PostViewSet)
+router.register('posts',PostViewSet ,basename="post")# registering the viewset with the router
 urlpatterns+=router.urls
